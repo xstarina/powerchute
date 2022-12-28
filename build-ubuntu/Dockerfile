@@ -42,5 +42,7 @@ RUN set -x \
 
 EXPOSE 6547/tcp
 
+LABEL org.opencontainers.image.description "APC PowerChute Business Edition as a Docker container"
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["../jre/bin/java", "-Dpicard.main.thread=blocking", "-classpath", "lib/*:Resources/*:comp/*", "com.apcc.m11.application.PicardApplication", "@critical.cfg"]
