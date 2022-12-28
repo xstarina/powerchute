@@ -43,5 +43,4 @@ docker run \
   --mount type=bind,source="$DATADIR/.ssh/",target=/root/.ssh/ \
   --mount type=bind,source="$DATADIR/cmdfiles/",target=/opt/APC/PowerChuteBusinessEdition/Agent/cmdfiles/ \
   --restart always \
-  --detach \
-  starina/powerchute:ubuntu-latest
+  --detach $IMG
