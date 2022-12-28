@@ -17,7 +17,7 @@ RUN set -x \
   && rpm -ivh --prefix=$PCBEDIR pbeagent-*.x86_64.rpm \
   && cd $PCBEDIR \
   && rm -rf /tmp/pcbe/$PCBEVER \
-  && ../jre/bin/java --add-exports java.base/com.sun.crypto.provider=ALL-UNNAMED -jar ./lib/pcbeconfig.jar user=apcadm pass=Qq111111 signal=serial port=/dev/ttyS0 || true
+  && ( ../jre/bin/java --add-exports java.base/com.sun.crypto.provider=ALL-UNNAMED -jar ./lib/pcbeconfig.jar user=apcadm pass=Qq111111 signal=serial port=/dev/ttyS0 || true )
 
 # ----------
 
