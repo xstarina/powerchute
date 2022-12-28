@@ -6,6 +6,9 @@ UPS management, graceful shutdown, and energy management software for servers an
 
 **This build is for evaluation purposes only and must not violate any APC license restrictions. Use at your own risk.**
 
+## Explore on Docker Hub
+<https://hub.docker.com/r/starina/powerchute>
+
 ## Default username and password
 - Username: `apcadm`
 - Password: `Qq111111`
@@ -19,7 +22,7 @@ I recommend using a Docker `volume` or `bind` mount for persistent data.
 docker run \
   --name apc \
   --network host \
-  --device=/dev/ttyS0 \
+  --device /dev/ttyS0 \
   --env TZ=Europe/Moscow \
   --mount type=bind,source=/docker/apc/.ssh/,target=/root/.ssh/ \
   --mount type=bind,source=/docker/apc/cmdfiles/,target=/opt/APC/PowerChuteBusinessEdition/Agent/cmdfiles/ \
@@ -53,7 +56,7 @@ docker rm apc
 docker run \
   --name apc \
   --network host \
-  --device=/dev/ttyS0 \
+  --device /dev/ttyS0 \
   --env TZ=Europe/Moscow \
   --mount type=bind,source=/docker/apc/DataLog,target=/opt/APC/PowerChuteBusinessEdition/Agent/DataLog \
   --mount type=bind,source=/docker/apc/EventLog,target=/opt/APC/PowerChuteBusinessEdition/Agent/EventLog \

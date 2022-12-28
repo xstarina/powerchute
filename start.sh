@@ -34,7 +34,7 @@ fi
 docker run \
   --name apc \
   --network host \
-  --device=/dev/ttyS0 \
+  --device /dev/ttyS0 \
   --env TZ=Europe/Moscow \
   --mount type=bind,source="$DATADIR/DataLog",target=/opt/APC/PowerChuteBusinessEdition/Agent/DataLog \
   --mount type=bind,source="$DATADIR/EventLog",target=/opt/APC/PowerChuteBusinessEdition/Agent/EventLog \
